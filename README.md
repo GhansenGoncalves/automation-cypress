@@ -40,3 +40,9 @@ npm test           # headless, mesmo que roda no CI
 ## Stack
 
 Cypress · JavaScript · GitHub Actions (`cypress-io/github-action`)
+
+## Nota sobre estabilidade em CI
+
+Como o alvo é um site de terceiros fora do nosso controle, o `cypress.config.js`
+habilita 2 retries automáticos em `runMode` (CI) para absorver instabilidade de
+rede/latência do SauceDemo sem mascarar falhas reais recorrentes.
