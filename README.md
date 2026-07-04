@@ -43,6 +43,10 @@ Cypress · JavaScript · GitHub Actions (`cypress-io/github-action`)
 
 ## Nota sobre estabilidade em CI
 
-Como o alvo é um site de terceiros fora do nosso controle, o `cypress.config.js`
-habilita 2 retries automáticos em `runMode` (CI) para absorver instabilidade de
-rede/latência do SauceDemo sem mascarar falhas reais recorrentes.
+O SauceDemo trava a navegação a partir do segundo acesso vindo do mesmo IP em
+um curto intervalo — comportamento comum de sites públicos de demonstração
+contra IPs de nuvem/CI (como os runners do GitHub Actions). Por isso cada spec
+navega uma única vez (`before`, não `beforeEach`) e percorre os cenários numa
+mesma sessão de página, em vez de recarregar a cada teste. O
+`cypress.config.js` também habilita retries em `runMode` como camada extra de
+resiliência contra instabilidade de rede.
