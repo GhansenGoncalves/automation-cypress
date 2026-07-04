@@ -1,4 +1,4 @@
-# 🧪 Automação E2E com Cypress
+# Automação E2E com Cypress
 
 [![Cypress E2E](https://github.com/ghansengoncalves/automation-cypress/actions/workflows/cypress.yml/badge.svg)](https://github.com/ghansengoncalves/automation-cypress/actions/workflows/cypress.yml)
 
